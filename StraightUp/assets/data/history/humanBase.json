@@ -1,0 +1,221 @@
+[
+{
+	"id": "500",
+	"weight": 0.95,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "female", "attractedToMen" ],
+	"impliedAspects": [ "male", "humanMale", "maleBody", "heterosexual", "attractedToWomen" ],
+	"humanName": "maleName",
+	"showInSummary": false
+},
+{
+	"id": "501",
+	"weight": 0.03,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "female", "attractedToWomen" ],
+	"impliedAspects": [ "male", "humanMale", "maleBody", "heterosexual", "attractedToWomen" ],
+	"humanName": "maleName",
+	"showInSummary": false
+},
+{
+	"id": "502",
+	"weight": 0.95,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "male", "attractedToWomen" ],
+	"impliedAspects": [ "female", "humanFemale", "femaleBody", "heterosexual", "attractedToMen" ],
+	"humanName": "femaleName",
+	"showInSummary": false
+},
+{
+	"id": "503",
+	"weight": 0.03,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "male", "attractedToMen" ],
+	"impliedAspects": [ "female", "humanFemale", "femaleBody", "heterosexual", "attractedToMen" ],
+	"humanName": "femaleName",
+	"showInSummary": false
+},
+{
+	"id": "504",
+	"weight": 0.04,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "female" ],
+	"impliedAspects": [ "male", "humanMale", "maleBody", "attractedToMen", "attractedToWomen" ],
+	"humanName": "maleName",
+	"showInSummary": false
+},
+{
+	"id": "505",
+	"weight": 0.04,
+	"category": "bornHuman",
+	"forbiddenAspects": [ "male" ],
+	"impliedAspects": [ "female", "humanFemale", "femaleBody", "attractedToMen", "attractedToWomen" ],
+	"humanName": "femaleName",
+	"showInSummary": false
+},
+{
+	"id": "709",
+	"category": "dieOfOldAge",
+	"impliedAspects": [ "dead" ],
+	"removeAspects": [ "alive", "activeDefender" ]
+},
+{
+	"id": "701",
+	"category": "earlyMiddleAge",
+	"impliedAspects": [ "earlyMiddleAge" ],
+	"removeAspects": [
+		"young",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "706",
+	"category": "extremeOldAge",
+	"impliedAspects": [ "extremeOldAge" ],
+	"removeAspects": [
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "humanBase.001",
+	"category": "humanBase",
+	"impliedAspects": [
+		"human",
+		"humanRig",
+		"activeDefender",
+		"alive",
+		"eligibleForDeathChoice",
+		"canWallWithAllies",
+		"simplePresence",
+		"ATTACHMENTS_workingRightArm",
+		"ATTACHMENTS_workingLeftArm",
+		"humanSkin_naturalLeftArm",
+		"humanSkin_naturalLeftHand",
+		"humanSkin_naturalRightArm",
+		"humanSkin_naturalRightHand",
+		"humanSkin_naturalLeftLeg",
+		"humanSkin_naturalRightLeg",
+		"humanSkin_naturalHead"
+	],
+	"showInSummary": false
+},
+{
+	"id": "humanSkin_aging.001",
+	"category": "humanSkin_aging",
+	"impliedAspects": [],
+	"showInSummary": false
+},
+{
+	"id": "humanSkin_colors.001",
+	"category": "humanSkin_colors",
+	"impliedAspects": [],
+	"showInSummary": false
+},
+{
+	"id": "humanSkin_head.001",
+	"category": "humanSkin_head",
+	"impliedAspects": [],
+	"showInSummary": false
+},
+{
+	"id": "707",
+	"category": "immortal",
+	"impliedAspects": [],
+	"removeAspects": [
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
+	]
+},
+{
+	"id": "703",
+	"category": "lateMiddleAge",
+	"impliedAspects": [ "lateMiddleAge" ],
+	"removeAspects": [
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "702",
+	"category": "middleAge",
+	"impliedAspects": [ "middleAge" ],
+	"removeAspects": [
+		"young",
+		"earlyMiddleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "708",
+	"category": "mortal",
+	"impliedAspects": [ "mortal" ],
+	"showInSummary": false
+},
+{
+	"id": "704",
+	"category": "oldAge",
+	"impliedAspects": [ "oldAge" ],
+	"removeAspects": [
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"veryOldAge",
+		"extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "705",
+	"category": "veryOldAge",
+	"impliedAspects": [ "veryOldAge" ],
+	"removeAspects": [
+		"young",
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"extremeOldAge"
+	],
+	"showInSummary": false
+},
+{
+	"id": "700",
+	"category": "young",
+	"impliedAspects": [ "young" ],
+	"removeAspects": [
+		"earlyMiddleAge",
+		"middleAge",
+		"lateMiddleAge",
+		"oldAge",
+		"veryOldAge",
+		"extremeOldAge"
+	],
+	"showInSummary": false
+}
+]
