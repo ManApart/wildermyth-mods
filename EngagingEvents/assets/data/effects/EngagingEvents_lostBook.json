@@ -1,0 +1,171 @@
+{
+"id": "EngagingEvents_lostBook",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "EngagingEvents_lostBook",
+	"modId": "EngagingEvents",
+	"author": "Manapart"
+},
+"type": "ENCOUNTER_HEROES_ARRIVE_HOSTILE_SITE",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"musicOverride": "Music/Comics - Everyday Moments"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "bookish",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "(10*BOOKISH)+mystic",
+		"scoreThreshold": "800",
+		"aspects": null,
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "friend",
+		"template": "PICK_BY_SCORE",
+		"type": "HERO",
+		"scoreFunction": "(10*SNARK)+LONER",
+		"scoreThreshold": "800",
+		"aspects": null,
+		"notAlreadyMatchedAs": [ "bookish" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_abstractOrangeLight.jpg",
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-surprised",
+							"equipment": { "mode": "removeWeapons" },
+							"size": 1.2875,
+							"drawDepth": 1,
+							"head": { "rotate": -3.47, "scaleY": -1 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "EngagingEvents_lostBook",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"form": "frame-scared",
+							"equipment": {}
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "EngagingEvents_lostBook",
+							"textKey": "~01~prompt~panel_002~1_bookish",
+							"pointerOwner": "bookish"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "friend",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "EngagingEvents_lostBook",
+							"textKey": "~01~prompt~panel_003~1_bookish",
+							"pointerOwner": "bookish"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "friend",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "EngagingEvents_lostBook",
+							"textKey": "~01~prompt~panel_004~1_friend",
+							"pointerOwner": "friend"
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"role": "bookish",
+							"equipment": {},
+							"anchor": { "x": 0.18, "y": 0.5 }
+						},
+						{
+							"role": "friend",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.82, "y": 0.5 },
+							"nameTag": "bottomRight"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "EngagingEvents_lostBook",
+							"textKey": "~01~prompt~panel_005~1_friend",
+							"pointerOwner": "friend"
+						}
+					]
+				}
+			}
+		],
+		"options": []
+	}
+],
+"outcomes": []
+}
