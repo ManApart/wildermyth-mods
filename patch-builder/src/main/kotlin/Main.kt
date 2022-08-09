@@ -45,7 +45,7 @@ private fun getAllNameJsons(workshopFolder: File, file: File): List<NameJson> {
         file.isDirectory -> file.listFiles().flatMap { getAllNameJsons(workshopFolder, it) }
         file.name.endsWith("human.names.json") -> {
             //Get the modFolder based on the mod we're looking at
-            val modInfoFile = File(workshopFolder.listFiles().first { file.name.contains(it.name) }.path + File.separator + "mod.json")
+            val modInfoFile = File(workshopFolder.listFiles().first { file.path.contains(it.name.split(File.separator).last()) }.path + File.separator + "mod.json")
             val modInfo: ModInfo = mapper.readValue(modInfoFile)
             listOf(NameJson(modInfo.name, file.absolutePath, mapper.readValue(file)))
         }
@@ -60,11 +60,10 @@ fun setupPatchMod(modFolder: File, nameJsons: List<NameJson>) {
     File(modFolder.path + File.separator + "mod.json").writeText(modInfo(modNames))
 }
 
-fun addPatchedFile(gameModsFolder: File, patchedNames: Map<String, Any>) {
-
-//    val path = listOf(gameModsFolder.path, ).joinToString(File.separator)
-//    File(path).mkdirs()
-//    File(path + File.separator + "human.names.json").writeText(mapper.writeValueAsString(patchedNames))
+fun addPatchedFile(modFolder: File, patchedNames: Map<String, Any>) {
+    val path = (listOf(modFolder.path) + "assets/data/generation".split("/")).joinToString(File.separator)
+    File(path).mkdirs()
+    File(path + File.separator + "human.names.json").writeText(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(patchedNames))
 }
 
 
