@@ -26,6 +26,19 @@ class MergeTest {
     }
 
     @Test
+    fun retainBlanks() {
+        val input = listOf(
+            mapOf("A" to listOf("A", "C")),
+            mapOf("A" to listOf("", "")),
+        )
+
+        val expected = mapOf("A" to listOf("A", "C", "", ""))
+
+        val actual = mergeFiles(input)
+        assertEquals(expected, actual)
+    }
+
+    @Test
     fun nonArrayNotTouched() {
         val input = listOf(
             mapOf("A" to listOf(4), "B" to false),
