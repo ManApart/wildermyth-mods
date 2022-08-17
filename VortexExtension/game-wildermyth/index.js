@@ -1,6 +1,5 @@
 const path = require('path');
 const { fs, log, util } = require('vortex-api');
-const winapi = require('winapi-bindings');
 
 const GAME_ID = 'wildermyth';
 const STEAMAPP_ID = '763890';
@@ -36,19 +35,8 @@ function main(context) {
 }
 
 function findGame() {
-  try {
-    const instPath = winapi.RegGetValue(
-      'HKEY_LOCAL_MACHINE',
-      'SOFTWARE\\WOW6432Node\\GOG.com\\Games\\' + GOGAPP_ID,
-      'PATH');
-    if (!instPath) {
-      throw new Error('empty registry key');
-    }
-    return Promise.resolve(instPath.value);
-  } catch (err) {
-    return util.GameStoreHelper.findByAppId([STEAMAPP_ID, GOGAPP_ID])
-      .then(game => game.gamePath);
-  }
+  return util.GameStoreHelper.findByAppId([STEAMAPP_ID, GOGAPP_ID])
+    .then(game => game.gamePath);
 }
 
 function testSupportedContent(files, gameId) {
