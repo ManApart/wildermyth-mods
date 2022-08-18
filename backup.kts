@@ -24,6 +24,8 @@ modDirectory.listFiles()
 
 fun copyDir(src: Path, dest: Path) {
     Files.walk(src).filter { !it.toFile().isDirectory }.forEach {
-        Files.copy(it, dest.resolve(src.relativize(it)), StandardCopyOption.REPLACE_EXISTING)
+        val destLocation = dest.resolve(src.relativize(it))
+        destLocation.toFile().mkdirs()
+        Files.copy(it, destLocation, StandardCopyOption.REPLACE_EXISTING)
     }
 }
