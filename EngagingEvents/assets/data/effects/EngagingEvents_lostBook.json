@@ -18,7 +18,10 @@
 	{ "template": "EVENT" },
 	{ "template": "COMPANY" },
 	{ "template": "INJECTED_TILE" },
-	{ "template": "INJECTED_SITE" },
+	{
+		"template": "INJECTED_SITE",
+		"stationAspects": [ "forestShrine" ]
+	},
 	{ "template": "INJECTED_PARTY" },
 	{ "template": "INJECTED_THREAT" },
 	{
@@ -27,16 +30,14 @@
 		"type": "HERO",
 		"scoreFunction": "(10*BOOKISH)+mystic",
 		"scoreThreshold": "800",
-		"aspects": null,
 		"notAlreadyMatchedAs": []
 	},
 	{
 		"role": "friend",
 		"template": "PICK_BY_SCORE",
 		"type": "HERO",
-		"scoreFunction": "(10*SNARK)+LONER",
+		"scoreFunction": "(10*(SNARK-BOOKISH))+LONER",
 		"scoreThreshold": "800",
-		"aspects": null,
 		"notAlreadyMatchedAs": [ "bookish" ]
 	},
 	{
@@ -46,7 +47,6 @@
 				"class": "comicNode_Panel",
 				"panel": {
 					"size": "full",
-					"bg": "comicBG_abstractOrangeLight.jpg",
 					"actorSlots": [
 						{
 							"role": "bookish",
@@ -91,15 +91,18 @@
 					"actorSlots": [
 						{
 							"role": "bookish",
+							"form": "frame-interested",
 							"equipment": {},
 							"anchor": { "x": 0.18, "y": 0.5 }
 						},
 						{
 							"role": "friend",
+							"form": "frame-surprised",
 							"facing": "left",
 							"equipment": {},
 							"anchor": { "x": 0.82, "y": 0.5 },
-							"nameTag": "bottomRight"
+							"nameTag": "bottomRight",
+							"head": { "rotate": 13.393 }
 						}
 					],
 					"textSlots": [
@@ -117,11 +120,14 @@
 					"actorSlots": [
 						{
 							"role": "bookish",
+							"form": "frame-sad",
 							"equipment": {},
-							"anchor": { "x": 0.18, "y": 0.5 }
+							"anchor": { "x": 0.18, "y": 0.5 },
+							"head": { "rotate": -12.995 }
 						},
 						{
 							"role": "friend",
+							"form": "frame-dubious",
 							"facing": "left",
 							"equipment": {},
 							"anchor": { "x": 0.82, "y": 0.5 },
@@ -143,11 +149,13 @@
 					"actorSlots": [
 						{
 							"role": "bookish",
+							"form": "frame-grim",
 							"equipment": {},
 							"anchor": { "x": 0.18, "y": 0.5 }
 						},
 						{
 							"role": "friend",
+							"form": "frame-skeptical",
 							"facing": "left",
 							"equipment": {},
 							"anchor": { "x": 0.82, "y": 0.5 },
